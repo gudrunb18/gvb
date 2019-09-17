@@ -5,6 +5,7 @@ def north(x,y):
         return False
     return True
 
+#comment
 def east(x,y):
     if (x,y) != (1,2) and (x,y) != (1,3) and (x,y) != (2,3):
         return False
