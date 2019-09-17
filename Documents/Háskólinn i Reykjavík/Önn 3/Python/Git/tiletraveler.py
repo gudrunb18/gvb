@@ -5,7 +5,6 @@ def north(x,y):
         return False
     return True
 
-#comment
 def east(x,y):
     if (x,y) != (1,2) and (x,y) != (1,3) and (x,y) != (2,3):
         return False
@@ -22,23 +21,23 @@ def south(x,y):
     return True
 
 def string(n,e,s,w):
-    dir = ""
-    while dir == "":
+    direction = ""
+    while direction == "":
         if n == True:
-            dir += "(N)orth"
+            direction += "(N)orth"
         elif e == True:
-            dir += "(E)ast"
+            direction += "(E)ast"
         elif s == True:
-            dir += "(S)outh"
+            direction += "(S)outh"
         elif w == True:
-            dir += "(W)est"
-    if e == True and dir != "(E)ast":
-        dir += " or (E)ast"
-    if s == True and dir != "(S)outh":
-        dir += " or (S)outh"
-    if w == True and dir != "(W)est":
-        dir += " or (W)est"
-    return dir
+            direction += "(W)est"
+    if e == True and direction != "(E)ast":
+        direction += " or (E)ast"
+    if s == True and direction != "(S)outh":
+        direction += " or (S)outh"
+    if w == True and direction != "(W)est":
+        direction += " or (W)est"
+    return direction
     
 def command_call():
     i = input("Direction: ")
@@ -63,8 +62,8 @@ def move(x,y,string):
     
 
 while (x,y) != (3,1):
-    a = x
-    b = y
+    hnit1 = x
+    hnit2 = y
     N,E,S,W = True,True,True,True
     N = north(x,y)
     E = east(x,y)
@@ -73,11 +72,12 @@ while (x,y) != (3,1):
     directions = string(N,E,S,W)
     print("You can travel: " + directions + ".")
     command = ""
-    while (x,y) == (a,b):
+    while (x,y) == (hnit1,hnit2):
         command = command_call()
         x,y = move(x,y,command)
-        if (x,y) == (a,b):
+        if (x,y) == (hnit1,hnit2):
             print("Not a valid direction!")
 print("Victory!")
+
 
 
