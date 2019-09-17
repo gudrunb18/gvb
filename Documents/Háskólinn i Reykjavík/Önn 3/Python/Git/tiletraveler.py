@@ -64,7 +64,7 @@ def move(x,y,string):
         x += translocator(E)
     return x,y
     
-#here the while loop will go on until the user has gotten to (3,1)
+#here you are calling all your functions to make the program run
 while (x,y) != (3,1):
     hnit1 = x
     hnit2 = y
